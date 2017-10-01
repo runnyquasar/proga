@@ -3,13 +3,15 @@ y=int(input("Enter y:"))
 z=int(input("Enter z:"))
 
 if x+y==z:
-    print("x+y=z")
-else:
-    print("not this day")
-      
     if x/y==z:
-        print("x/y=z")
+        print("how is it possible?")
     else:
-        print("=(")
+        print("x+y=z, but x/y!=z")
+else:
+    if x/y==z:
+        print("x/y=z, but x+y!=z")
+    else:
+        print("nothing works")
+    
 
 print("The end")
