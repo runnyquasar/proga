@@ -1,0 +1,25 @@
+noun2f
+[“l’hiver”, “l’été”, “la mur”, “la vague”]
+noun2m
+[“le loop”, “le chat”, “la fille”]
+noun3
+[“l’épaule”, “le garçon”, “le pigeon”]
+verb
+[“arrive”, “s’installe”,“se passe”]
+verb2
+[ “sait”, “passe”, “aime”,”mange”, ]
+verb3
+[“finit”, “boit” , “écrit”]
+prep
+[“à”]
+exc
+[“hein?”, “ò-la!”]
+no
+[“ne”]
+pas
+[“pas”]
+adjf
+[“belle”,”jolie”, “grande”]
+adjm
+[“beau”,”grand”, “petit”]
+ 
