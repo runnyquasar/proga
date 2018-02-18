@@ -1,23 +1,34 @@
 import random
 
-with open('oborona.csv', 'r', encoding = 'utf-8') as f:
-    pairs = f.readlines()
+def open_f(filename):
+    with open(filename, encoding = 'utf-8') as f:
+        pairs = f.readlines()
+        
+    hints = {}
     
-hints = {}
+    for pair in pairs:
+        pair = pair.strip('\ufeff \n')
+        hint, word = pair.split(';')
+        hints[word] = hint
+        
+    return hints
 
-for pair in pairs:
-    pair = pair.strip('\ufeff \n')
-    hint, word = pair.split(';')
-    hints[word] = hint
+def both_f(pairsdict):
+    question = random.choice(list(pairsdict.keys()))
+    hint = pairsdict[question]    
+    return question, hint
 
-question = random.choice(list(hints.keys()))
-hint = hints[question]
+def check_f(user_ans, right):
+    if user_ans == right:
+        print('Молодец! С тобой пластмассовый мир никогда не победит!')
+    else:
+        print('Эх, почитай еще журнал "Корея".' +' \n'+ 'Тогда поймешь, что правильный ответ - ', right)    
 
-print('Давай проверим, насколько все идет по плану.')
+hints = open_f('oborona.csv')
+question, hint = both_f(hints)
+
+print('Давай посмотрим, насколько все идет по плану')
 print(hint, '.' * len(hint), sep = '')
 answer = input('Ваш ответ: ')
 
-if answer == question:
-    print('Молодец! В твоем ответе все как в журнале "Корея" - тоже хорошо!')
-else:
-    print('Нет, макет все же оказался синльней. ', question)
+check_f(answer, question)
