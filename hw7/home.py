@@ -5,6 +5,9 @@ def open_f(name):
     with open(fname, encoding='utf-8') as f:
         list = f.read()
         list = list.split(' ')
+        for punct in [',', '.', ':', ';', '…', '—', '!', '?', '/', '"', '«', '»']: 
+            if punct in list: 
+                list = list.replace(punct, '') 
     return list
 
 
